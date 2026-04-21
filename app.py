@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 import pandas as pd
+import pytz 
 from datetime import datetime
 
 # Configuración de la página
@@ -24,9 +25,10 @@ if boton_giro and nombre:
     st.balloons() # ¡Tira confeti en la pantalla!
     st.success(f"¡Felicidades {nombre}! Ganaste: {resultado}")
     
-    # Guardar en histórico
-    nuevo_registro = {"Hora": datetime.now().strftime("%H:%M:%S"), "Nombre": nombre, "Premio": resultado}
-    st.session_state.historico.insert(0, nuevo_registro)
+#Mostrar Hístorico
+zona_horaria = pytz.timezone('America/Bogota')
+hora_actual = datetime.now(zona_horaria).strftime("%H:%M:%S")
+nuevo_registro = {"Hora": hora_actual, "Nombre": nombre, "Premio": resultado[0]}
 
 # Mostrar histórico
 st.subheader("📜 Registro de Ganadores")
