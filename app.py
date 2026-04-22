@@ -22,7 +22,7 @@ boton_giro = st.button("✨ ¡GIRAR RULETA! ✨")
 if boton_giro and nombre:
     premios = ["🃏 COMÚN", "💎 RARO", "🔥 LEGENDARIO"]
     # Puedes ajustar estos pesos en GitHub cuando quieras
-    pesos = [0.70, 0.25, 0.05] 
+    pesos = [0.55, 0.35, 0.10] 
     
     resultado = random.choices(premios, weights=pesos, k=1)[0]
     
