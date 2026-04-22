@@ -6,7 +6,7 @@ import pytz
 
 # Configuración de la página
 st.set_page_config(page_title="GashasXD", layout="wide")
-st.title("🌀 GashasXD: Ruleta de Duelo")
+st.title("🌀 GashasXD: Ruleta de Caja misteriosa")
 
 # Inicializar histórico en la sesión
 if 'historico' not in st.session_state:
@@ -16,7 +16,7 @@ if 'historico' not in st.session_state:
 bogota_tz = pytz.timezone('America/Bogota')
 
 # Formulario de giro
-nombre = st.text_input("Ingresa tu nombre de duelista:")
+nombre = st.text_input("Ingresa tu nombre de duelista/entrenador:")
 boton_giro = st.button("✨ ¡GIRAR RULETA! ✨")
 
 if boton_giro and nombre:
